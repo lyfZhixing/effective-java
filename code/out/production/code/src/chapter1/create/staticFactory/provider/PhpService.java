@@ -9,12 +9,12 @@ public class PhpService implements Provider {
         return new Service() {
             @Override
             public void doHello() {
-                System.out.println("hello, JAVA!");
+                System.out.println("hello, PHP NO.1!");
             }
 
             @Override
             public void doService() {
-                System.out.println("java service");
+                System.out.println("php service");
             }
         };
     }
