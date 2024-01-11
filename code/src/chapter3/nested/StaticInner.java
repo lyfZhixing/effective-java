@@ -4,6 +4,8 @@ import java.util.function.Function;
 
 /**
  * 嵌套静态内部类
+ * 如果声明的成员类不需要访问外部的实例，那么应始终在声明中添加 static 修饰符，使其成为静态的而不是非静态的成员类
+ * eg: 本例中的Operation并没有访问StaticInner中的其他实例属性name, age 等
  * 常见用法：
  * 1. 使用静态成员类实现辅助工具类 {@link chapter3.nested.StaticInner.Operation}
  * 2. 静态内部类实现Build模式构建对象 {@link chapter1.create.builder.NutritionFacts.Builder}
