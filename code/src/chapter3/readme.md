@@ -13,3 +13,4 @@
 
 [嵌套类](nested)
 - [静态成员类](nested/StaticMember.java)
+- [匿名内部类](nested/AnonymousInner.java)
