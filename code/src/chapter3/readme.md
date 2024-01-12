@@ -12,4 +12,4 @@
 - 类层次结构优于带标签的类
 
 [嵌套类](nested)
-- [静态内部类](nested/StaticInner.java)
+- [静态成员类](nested/StaticMember.java)
