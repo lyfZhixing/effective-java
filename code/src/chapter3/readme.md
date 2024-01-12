@@ -11,6 +11,7 @@
 - 继承要设计良好并且具有文档，否则禁止使用
 - 类层次结构优于带标签的类
 
-[嵌套类](nested)
+[嵌套类](nested)  
+**如果成员类不使用外部对象实例的属性，则使用静态成员类**
 - [静态成员类](nested/StaticMember.java)
 - [匿名内部类](nested/AnonymousInner.java)
