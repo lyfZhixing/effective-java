@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * <pre>
  * 使用有界通配符增加API的灵活性
+ * 在 API 中使用通配符类型虽然很棘手，但可以使其更加灵活。如果你编写的库将被广泛使用，则必须考虑通配符类型的正确使用
  * </pre>
  */
 public class BoundedWildcards4API {
