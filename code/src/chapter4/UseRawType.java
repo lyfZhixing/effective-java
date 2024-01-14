@@ -49,7 +49,7 @@ public class UseRawType {
 
     /**
      * <pre>
-     *     List< Object > 替代 List 可以增加安全性，但也不建议这么用
+     * List< Object > 替代 List 可以增加安全性，但也不建议这么用
      * </pre>
      */
     static void objectGenerics() {

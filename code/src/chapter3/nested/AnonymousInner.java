@@ -5,8 +5,9 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * <pre>
  * 匿名内部类
- * 这的代码采用书中的源码，实现将int数组转换为 List of Integer的功能，
+ * 这的代码采用书中的源码，实现将int数组转换为 List of Integer的功能：
  * - 使用匿名内部类作为静态工厂，负责初始化 List of Integer；
  *  . 使用静态方法intArrayAsList创建对象
  *  . 内部使用匿名内部类实现对象创建细节
@@ -15,6 +16,7 @@ import java.util.Objects;
  * 常见用法：
  * 1. 静态工厂
  * 2. 在 lambda 表达式被添加到 Java之前，匿名类是动态创建小型函数对象和进程对象的首选方法，但 lambda 表达式现在是首选方法
+ * </pre>
  */
 public class AnonymousInner {
 

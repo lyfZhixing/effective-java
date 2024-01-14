@@ -7,13 +7,15 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
+ * <pre>
  * 重写equals 必须重写hashcode 否则类在 HashMap 和 HashSet 等集合中无法正常运行
  * --
- * 当一个类有一个逻辑相等的概念，而这个概念不同于仅判断对象的同一性（相同对象的引用），并且超类还没有覆盖 equals 时需要覆盖equals
+ * 当一个类有一个逻辑相等的概念，而这个概念不同于仅判断对象的同一性（相同对象的引用），并且超类还没有覆盖 equals 时需要覆盖equals；
  * 覆盖 equals 方法可以使实例能够作为 Map 的键或 Set 元素，使其具有可预测的、理想的行为。
  * --
  * 除非必须，否则不要覆盖 equals 方法：在许多情况下，从 Object 继承而来的实现足够满足需求
  * 如果必须覆盖 equals，那么一定要比较该类所有的重要字段
+ * </pre>
  */
 public class EqualStu {
 

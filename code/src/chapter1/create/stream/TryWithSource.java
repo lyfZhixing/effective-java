@@ -5,9 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
+ * <pre>
  * 使用 try-with-resources 优于 try-finally
  * 代码量少，优雅
  * 不会吞掉原始异常 ， 使用try-finally实现相同效果，需要catch并记录堆栈，当需要关闭的流比较多时，会使代码变得复杂冗长
+ * </pre>
  */
 public class TryWithSource {
 

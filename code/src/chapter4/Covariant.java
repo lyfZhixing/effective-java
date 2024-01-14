@@ -5,9 +5,9 @@ import java.util.List;
 
 /**
  * <pre>
- *     数组是协变的，而泛型是不变的
- *     协变的后果在{@link #arrayCovariant()} 中可以看出，很不安全，有可能在编译器产生ArrayStoreException异常
- *     故在实际开发中使用List优先于数组，虽然这可能会牺牲一点性能，但换来了安全和易读，是值得的
+ * 数组是协变的，而泛型是不变的
+ * 协变的后果在{@link #arrayCovariant()} 中可以看出，很不安全，有可能在编译器产生ArrayStoreException异常
+ * 故在实际开发中使用List优先于数组，虽然这可能会牺牲一点性能，但换来了安全和易读，是值得的
  * </pre>
  */
 public class Covariant {
