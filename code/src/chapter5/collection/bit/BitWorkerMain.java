@@ -13,10 +13,8 @@ public class BitWorkerMain {
                 new BitWorker("赵四", SUNDAY | SATURDAY)
         );
 
-        System.out.printf("%s 没有人上班\n", noWorkerDay(workers));
-        System.out.printf("%s 至少会有一个人来上班\n", oneWorkerDay(workers));
-
-        System.out.println(1 << 6);
+        System.out.printf("%s 没有人上班\n", toBinaryString(noWorkerDay(workers)));
+        System.out.printf("%s 至少会有一个人来上班\n", toBinaryString(oneWorkerDay(workers)));
 
     }
 
@@ -34,5 +32,24 @@ public class BitWorkerMain {
             res = res | worker.getWorkerDays();
         }
         return res;
+    }
+
+    static String toBinaryString(int num) {
+
+        StringBuilder sb = new StringBuilder();
+
+        int mask = 1 << 31;
+
+        for(int i=0; i<32; i++) {
+            if((num & mask) != 0) {
+                sb.append("1 << ").append(31-i);
+                if(i < 31) {
+                    sb.append(" | ");
+                }
+            }
+            mask >>>= 1;
+        }
+
+        return sb.toString();
     }
 }
