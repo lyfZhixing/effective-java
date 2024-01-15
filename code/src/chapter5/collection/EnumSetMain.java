@@ -3,6 +3,22 @@ package chapter5.collection;
 import java.util.EnumSet;
 import java.util.List;
 
+/**
+ * <pre>
+ * <b>用 EnumSet 替代位字段</b>
+ * 1. 类型安全
+ *      EnumSet只允许添加枚举值,不允许添加其他非法元素。而位字段可以直接设置为任意int值,较不安全。
+ * 2. 可读性好
+ * 3. 扩展性强
+ *      新增枚举值只需添加枚举常量,EnumSet会自动支持。位字段需要修改掩码和相关逻辑。
+ * 4. 支持高级操作
+ *      EnumSet提供并集、交集、差集等集合运算,性能很好。位字段需要手动实现这些操作
+ * 5. 语义更清晰
+ * </pre>
+ *
+ * 相同功能的位字段实现： {@link chapter5.collection.bit.BitWorkerMain}
+ *
+ */
 public class EnumSetMain {
 
     public static void main(String[] args) {
@@ -30,12 +46,5 @@ public class EnumSetMain {
         }
         return days;
     }
-
-    static EnumSet<Day> twoWorkerDay(List<Worker> workers){
-        EnumSet<Day> days = EnumSet.noneOf(Day.class);
-        // todo ……
-        return days;
-    }
-
 
 }
