@@ -26,4 +26,6 @@
  1. 没有在可变参数数组中存储任何东西
  2. 不会让数组（或者其副本）出现在不可信的代码中
 
-[考虑类型安全的异构容器]()
+[考虑类型安全的异构容器](heterogeneous)  
+- [一个简单的类型安全的异构容器](heterogeneous/Favorites.java) 
+- [使用asSubclass将类对象强制转换为它所调用的类对象，以表示由其参数表示的类的子类](heterogeneous/AnnotationMain.java)
