@@ -34,22 +34,4 @@ public class BitWorkerMain {
         return res;
     }
 
-    static String toBinaryString(int num) {
-
-        StringBuilder sb = new StringBuilder();
-
-        int mask = 1 << 31;
-
-        for(int i=0; i<32; i++) {
-            if((num & mask) != 0) {
-                sb.append("1 << ").append(31-i);
-                if(i < 31) {
-                    sb.append(" | ");
-                }
-            }
-            mask >>>= 1;
-        }
-
-        return sb.toString();
-    }
 }
