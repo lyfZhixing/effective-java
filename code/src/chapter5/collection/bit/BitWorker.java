@@ -1,8 +1,8 @@
 package chapter5.collection.bit;
 
 public class BitWorker {
-    private String name;
-    private int workerDays;
+    private final String name;
+    private final int workerDays;
 
     public String getName() {
         return name;

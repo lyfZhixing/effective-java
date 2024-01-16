@@ -6,6 +6,11 @@ import java.util.List;
 /**
  * <pre>
  * <b>用 EnumSet 替代位字段</b>
+ * <pre>
+ * EnumSet使用ordinal()值作为bit位的索引
+ * 通过修改对应位来标识包含的枚举值
+ * 访问某个枚举时使用ordinal()获取其在EnumSet中的位置
+ * </pre>
  * 1. 类型安全
  *      EnumSet只允许添加枚举值,不允许添加其他非法元素。而位字段可以直接设置为任意int值,较不安全。
  * 2. 可读性好
@@ -22,11 +27,7 @@ import java.util.List;
 public class EnumSetMain {
 
     public static void main(String[] args) {
-        List<Worker> workers = List.of(new Worker("张三", EnumSet.of(Day.MONDAY, Day.WEDNESDAY, Day.SATURDAY)),
-                new Worker("李四", EnumSet.of(Day.THURSDAY, Day.SATURDAY)),
-                new Worker("王二", EnumSet.of(Day.FRIDAY, Day.SATURDAY)),
-                new Worker("赵四", EnumSet.of(Day.SUNDAY, Day.SATURDAY))
-        );
+        List<Worker> workers = Worker.mockData();
         System.out.printf("%s 没有人上班\n", noWorkerDay(workers));
         System.out.printf("%s 至少会有一个人来上班\n", oneWorkerDay(workers));
     }
