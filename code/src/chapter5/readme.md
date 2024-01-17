@@ -1,4 +1,4 @@
-## 第四章 泛型 Generics  
+## 泛型 Generics  
 
 [不要使用原始类型](UseRawType.java)    
 
