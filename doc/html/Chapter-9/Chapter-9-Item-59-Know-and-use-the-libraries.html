@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chapter-9-Item-59-Know-and-use-the-libraries</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h2 id="chapter-9.-general-programming通用程序设计">Chapter 9. General
+Programming（通用程序设计）</h2>
+<h3 id="item-59-know-and-use-the-libraries了解并使用库">Item 59: Know
+and use the libraries（了解并使用库）</h3>
+<p>Suppose you want to generate random integers between zero and some
+upper bound. Faced with this common task, many programmers would write a
+little method that looks something like this:</p>
+<p>假设你想要生成 0
+到某个上界之间的随机整数。面对这个常见任务，许多程序员会编写一个类似这样的小方法：</p>
+<pre><code>// Common but deeply flawed!
+static Random rnd = new Random();
+static int random(int n) {
+    return Math.abs(rnd.nextInt()) % n;
+}</code></pre>
+<p>This method may look good, but it has three flaws. The first is that
+if n is a small power of two, the sequence of random numbers will repeat
+itself after a fairly short period. The second flaw is that if n is not
+a power of two, some numbers will, on average, be returned more
+frequently than others. If n is large, this effect can be quite
+pronounced. This is powerfully demonstrated by the following program,
+which generates a million random numbers in a carefully chosen range and
+then prints out how many of the numbers fell in the lower half of the
+range:</p>
+<p>这个方法看起来不错，但它有三个缺点。首先，如果 n
+是小的平方数，随机数序列会在相当短的时间内重复。第二个缺陷是，如果 n
+不是 2 的幂，那么平均而言，一些数字将比其他数字更频繁地返回。如果 n
+很大，这种效果会很明显。下面的程序有力地证明了这一点，它在一个精心选择的范围内生成
+100 万个随机数，然后打印出有多少个数字落在范围的下半部分：</p>
+<pre><code>public static void main(String[] args) {
+    int n = 2 * (Integer.MAX_VALUE / 3);
+    int low = 0;
+    for (int i = 0; i &lt; 1000000; i++)
+        if (random(n) &lt; n/2)
+    low++;
+    System.out.println(low);
+}</code></pre>
+<p>If the random method worked properly, the program would print a
+number close to half a million, but if you run it, you’ll find that it
+prints a number close to 666,666. Two-thirds of the numbers generated by
+the random method fall in the lower half of its range!</p>
+<p>如果 random 方法工作正常，程序将输出一个接近 50
+万的数字，但是如果运行它，你将发现它输出一个接近 666666
+的数字。随机方法生成的数字中有三分之二落在其范围的下半部分！</p>
+<p>The third flaw in the random method is that it can, on rare
+occasions, fail catastrophically, returning a number outside the
+specified range. This is so because the method attempts to map the value
+returned by rnd.nextInt() to a non-negative int by calling Math.abs. If
+nextInt() returns Integer.MIN_VALUE, Math.abs will also return
+Integer.MIN_VALUE, and the remainder operator (%) will return a negative
+number, assuming n is not a power of two. This will almost certainly
+cause your program to fail, and the failure may be difficult to
+reproduce.</p>
+<p>random
+方法的第三个缺陷是，在极少数情况下会返回超出指定范围的数字，这是灾难性的结果。这是因为该方法试图通过调用
+<code>Math.abs</code> 将 <code>rnd.nextInt()</code>
+返回的值映射到非负整数。如果 <code>nextInt()</code>
+返回整数。<code>Integer.MIN_VALUE</code>、<code>Math.abs</code>
+也将返回整数。假设 n 不是 2 的幂，那么 <code>Integer.MIN_VALUE</code>
+和求模运算符 <code>(%)</code>
+将返回一个负数。几乎肯定的是，这会导致你的程序失败，并且这种失败可能难以重现。</p>
+<p>To write a version of the random method that corrects these flaws,
+you’d have to know a fair amount about pseudorandom number generators,
+number theory, and two’s complement arithmetic. Luckily, you don’t have
+to do this— it’s been done for you. It’s called Random.nextInt(int). You
+needn’t concern yourself with the details of how it does its job
+(although you can study the documentation or the source code if you’re
+curious). A senior engineer with a background in algorithms spent a good
+deal of time designing, implementing, and testing this method and then
+showed it to several experts in the field to make sure it was right.
+Then the library was beta tested, released, and used extensively by
+millions of programmers for almost two decades. No flaws have yet been
+found in the method, but if a flaw were to be discovered, it would be
+fixed in the next release. <strong>By using a standard library, you take
+advantage of the knowledge of the experts who wrote it and the
+experience of those who used it before you.</strong></p>
+<p>要编写一个 random 方法来纠正这些缺陷，你必须对伪随机数生成器、数论和
+2
+的补码算法有一定的了解。幸运的是，你不必这样做（这是为你而做的成果）。它被称为
+<code>Random.nextInt(int)</code>。你不必关心它如何工作的（尽管如果你感兴趣，可以研究文档或源代码）。一位具有算法背景的高级工程师花了大量时间设计、实现和测试这种方法，然后将其展示给该领域的几位专家，以确保它是正确的。然后，这个库经过
+beta 测试、发布，并被数百万程序员广泛使用了近 20
+年。该方法还没有发现任何缺陷，但是如果发现了缺陷，将在下一个版本中进行修复。<strong>通过使用标准库，你可以利用编写它的专家的知识和以前使用它的人的经验。</strong></p>
+<p>As of Java 7, you should no longer use Random. For most uses,
+<strong>the random number generator of choice is now
+ThreadLocalRandom.</strong> It produces higher quality random numbers,
+and it’s very fast. On my machine, it is 3.6 times faster than Random.
+For fork join pools and parallel streams, use SplittableRandom.</p>
+<p>从 Java 7 开始，就不应该再使用
+Random。在大多数情况下，<strong>选择的随机数生成器现在是
+ThreadLocalRandom。</strong>
+它能产生更高质量的随机数，而且速度非常快。在我的机器上，它比 Random 快
+3.6 倍。对于 fork 连接池和并行流，使用 SplittableRandom。</p>
+<p>A second advantage of using the libraries is that you don’t have to
+waste your time writing ad hoc solutions to problems that are only
+marginally related to your work. If you are like most programmers, you’d
+rather spend your time working on your application than on the
+underlying plumbing.</p>
+<p>使用这些库的第二个好处是，你不必浪费时间为那些与你的工作无关的问题编写专门的解决方案。如果你像大多数程序员一样，那么你宁愿将时间花在应用程序上，而不是底层管道上。</p>
+<p>A third advantage of using standard libraries is that their
+performance tends to improve over time, with no effort on your part.
+Because many people use them and because they’re used in
+industry-standard benchmarks, the organizations that supply these
+libraries have a strong incentive to make them run faster. Many of the
+Java platform libraries have been rewritten over the years, sometimes
+repeatedly, resulting in dramatic performance improvements. A fourth
+advantage of using libraries is that they tend to gain functionality
+over time. If a library is missing something, the developer community
+will make it known, and the missing functionality may get added in a
+subsequent release.</p>
+<p>使用标准库的第三个优点是，随着时间的推移，它们的性能会不断提高，而你无需付出任何努力。由于许多人使用它们，而且它们是在行业标准基准中使用的，所以提供这些库的组织有很强的动机使它们运行得更快。多年来，许多
+Java
+平台库都被重新编写过，有时甚至是反复编写，从而带来了显著的性能改进。使用库的第四个好处是，随着时间的推移，它们往往会获得新功能。如果一个库丢失了一些东西，开发人员社区会将其公布于众，并且丢失的功能可能会在后续版本中添加。</p>
+<p>A final advantage of using the standard libraries is that you place
+your code in the mainstream. Such code is more easily readable,
+maintainable, and reusable by the multitude of developers.</p>
+<p>使用标准库的最后一个好处是，可以将代码放在主干中。这样的代码更容易被开发人员阅读、维护和复用。</p>
+<p>Given all these advantages, it seems only logical to use library
+facilities in preference to ad hoc implementations, yet many programmers
+don’t. Why not? Perhaps they don’t know the library facilities exist.
+<strong>Numerous features are added to the libraries in every major
+release, and it pays to keep abreast of these additions.</strong> Each
+time there is a major release of the Java platform, a web page is
+published describing its new features. These pages are well worth
+reading [Java8-feat, Java9-feat]. To reinforce this point, suppose you
+wanted to write a program to print the contents of a URL specified on
+the command line (which is roughly what the Linux curl command does).
+Prior to Java 9, this code was a bit tedious, but in Java 9 the
+transferTo method was added to InputStream. Here is a complete program
+to perform this task using this new method:</p>
+<p>考虑到所有这些优点，使用库工具而不选择专门的实现似乎是合乎逻辑的，但许多程序员并不这样做。为什么不呢？也许他们不知道库的存在。<strong>在每个主要版本中，都会向库中添加许多特性，了解这些新增特性是值得的。</strong>
+每次发布 Java 平台的主要版本时，都会发布一个描述其新特性的 web
+页面。这些页面非常值得一读 [Java8-feat,
+Java9-feat]。为了强调这一点，假设你想编写一个程序来打印命令行中指定的
+URL 的内容（这大致是 Linux curl 命令所做的）。在 Java 9
+之前，这段代码有点乏味，但是在 Java 9 中，transferTo 方法被添加到
+InputStream 中。这是一个使用这个新方法执行这项任务的完整程序：</p>
+<pre><code>// Printing the contents of a URL with transferTo, added in Java 9
+public static void main(String[] args) throws IOException {
+    try (InputStream in = new URL(args[0]).openStream()) {
+        in.transferTo(System.out);
+    }
+}</code></pre>
+<p>The libraries are too big to study all the documentation [Java9-api],
+but <strong>every programmer should be familiar with the basics of
+java.lang, java.util, and java.io, and their subpackages.</strong>
+Knowledge of other libraries can be acquired on an as-needed basis. It
+is beyond the scope of this item to summarize the facilities in the
+libraries, which have grown immense over the years.</p>
+<p>库太大，无法学习所有文档 [Java9-api]，但是
+<strong>每个程序员都应该熟悉
+<code>java.lang</code>、<code>java.util</code> 和 <code>java.io</code>
+的基础知识及其子包。</strong>
+其他库的知识可以根据需要获得。概述库中的工具超出了本项目的范围，这些工具多年来已经发展得非常庞大。</p>
+<p>Several libraries bear special mention. The collections framework and
+the streams library (Items 45–48) should be part of every programmer’s
+basic toolkit, as should parts of the concurrency utilities in
+java.util.concurrent. This package contains both high-level utilities to
+simplify the task of multithreaded programming and low-level primitives
+to allow experts to write their own higher-level concurrent
+abstractions. The highlevel parts of java.util.concurrent are discussed
+in Items 80 and 81.</p>
+<p>有几个库值得一提。collections 框架和 streams 库（可参看 Item
+45-48）应该是每个程序员的基本工具包的一部分，<code>java.util.concurrent</code>
+中的并发实用程序也应该是其中的一部分。这个包既包含高级的并发工具来简化多线程的编程任务，还包含低级别的并发基本类型，允许专家们自己编写更高级的并发抽象。<code>java.util.concurrent</code>
+的高级部分，在 <a
+href="Chapter-11-Item-80-Prefer-executors,-tasks,-and-streams-to-threads.html">Item-80</a>
+和 <a
+href="Chapter-11-Item-81-Prefer-concurrency-utilities-to-wait-and-notify.html">Item-81</a>
+中讨论。</p>
+<p>Occasionally, a library facility can fail to meet your needs. The
+more specialized your needs, the more likely this is to happen. While
+your first impulse should be to use the libraries, if you’ve looked at
+what they have to offer in some area and it doesn’t meet your needs,
+then use an alternate implementation. There will always be holes in the
+functionality provided by any finite set of libraries. If you can’t find
+what you need in Java platform libraries, your next choice should be to
+look in high-quality third-party libraries, such as Google’s excellent,
+open source Guava library [Guava]. If you can’t find the functionality
+that you need in any appropriate library, you may have no choice but to
+implement it yourself.</p>
+<p>有时，类库工具可能无法满足你的需求。你的需求越专门化，发生这种情况的可能性就越大。虽然你的第一个思路应该是使用这些库，但是如果你已经了解了它们在某些领域提供的功能，而这些功能不能满足你的需求，那么可以使用另一种实现。任何有限的库集所提供的功能总是存在漏洞。如果你在
+Java
+平台库中找不到你需要的东西，你的下一个选择应该是寻找高质量的第三方库，比如谷歌的优秀的开源
+Guava 库
+[Guava]。如果你无法在任何适当的库中找到所需的功能，你可能别无选择，只能自己实现它。</p>
+<p>To summarize, don’t reinvent the wheel. If you need to do something
+that seems like it should be reasonably common, there may already be a
+facility in the libraries that does what you want. If there is, use it;
+if you don’t know, check. Generally speaking, library code is likely to
+be better than code that you’d write yourself and is likely to improve
+over time. This is no reflection on your abilities as a programmer.
+Economies of scale dictate that library code receives far more attention
+than most developers could afford to devote to the same
+functionality.</p>
+<p>总而言之，不要白费力气重新发明轮子。如果你需要做一些看起来相当常见的事情，那么库中可能已经有一个工具可以做你想做的事情。如果有，使用它；如果你不知道，检查一下。一般来说，库代码可能比你自己编写的代码更好，并且随着时间的推移可能会得到改进。这并不反映你作为一个程序员的能力。规模经济决定了库代码得到的关注要远远超过大多数开发人员所能承担的相同功能。</p>
+<hr />
+<p><strong><a href="Chapter-9-Introduction.html">Back to
+contents of the chapter（返回章节目录）</a></strong> - <strong>Previous
+Item（上一条目）：<a
+href="Chapter-9-Item-58-Prefer-for-each-loops-to-traditional-for-loops.html">Item
+58: Prefer for-each loops to traditional for loops（for-each
+循环优于传统的 for 循环）</a></strong> - <strong>Next
+Item（下一条目）：<a
+href="Chapter-9-Item-60-Avoid-float-and-double-if-exact-answers-are-required.html">Item
+60: Avoid float and double if exact answers are
+required（若需要精确答案就应避免使用 float 和 double
+类型）</a></strong></p>
+</body>
+</html>

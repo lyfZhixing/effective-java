@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1
+id="effective-java-3rd-edition-chinese-english-bilingual">Effective-Java-3rd-edition-Chinese-English-bilingual</h1>
+<p>Effective Java（第 3 版）各章节的中英文学习参考，希望对 Java
+技术的提高有所帮助，欢迎通过 issue 或 pr 提出建议和修改意见。</p>
+<h2 id="目录contents">目录（Contents）</h2>
+<ul>
+<li><strong>Chapter 2. Creating and Destroying
+Objects（创建和销毁对象）</strong>
+<ul>
+<li><a href="Chapter-2/Chapter-2-Introduction.html">Chapter 2
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-2/Chapter-2-Item-1-Consider-static-factory-methods-instead-of-constructors.html">Item
+1: Consider static factory methods instead of
+constructors（考虑以静态工厂方法代替构造函数）</a></li>
+<li><a
+href="Chapter-2/Chapter-2-Item-2-Consider-a-builder-when-faced-with-many-constructor-parameters.html">Item
+2: Consider a builder when faced with many constructor
+parameters（在面对多个构造函数参数时，请考虑构建器）</a></li>
+<li><a
+href="Chapter-2/Chapter-2-Item-3-Enforce-the-singleton-property-with-a-private-constructor-or-an-enum-type.html">Item
+3: Enforce the singleton property with a private constructor or an enum
+type（使用私有构造函数或枚举类型实施单例属性）</a></li>
+<li><a
+href="Chapter-2/Chapter-2-Item-4-Enforce-noninstantiability-with-a-private-constructor.html">Item
+4: Enforce noninstantiability with a private
+constructor（用私有构造函数实施不可实例化）</a></li>
+<li><a
+href="Chapter-2/Chapter-2-Item-5-Prefer-dependency-injection-to-hardwiring-resources.html">Item
+5: Prefer dependency injection to hardwiring
+resources（依赖注入优于硬连接资源）</a></li>
+<li><a
+href="Chapter-2/Chapter-2-Item-6-Avoid-creating-unnecessary-objects.html">Item
+6: Avoid creating unnecessary objects（避免创建不必要的对象）</a></li>
+<li><a
+href="Chapter-2/Chapter-2-Item-7-Eliminate-obsolete-object-references.html">Item
+7: Eliminate obsolete object references（排除过时的对象引用）</a></li>
+<li><a
+href="Chapter-2/Chapter-2-Item-8-Avoid-finalizers-and-cleaners.html">Item
+8: Avoid finalizers and cleaners（避免使用终结器和清除器）</a></li>
+<li><a
+href="Chapter-2/Chapter-2-Item-9-Prefer-try-with-resources-to-try-finally.html">Item
+9: Prefer try with resources to try finally（使用 try-with-resources
+优于 try-finally）</a></li>
+</ul></li>
+<li><strong>Chapter 3. Methods Common to All
+Objects（对象的通用方法）</strong>
+<ul>
+<li><a href="Chapter-3/Chapter-3-Introduction.html">Chapter 3
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-3/Chapter-3-Item-10-Obey-the-general-contract-when-overriding-equals.html">Item
+10: Obey the general contract when overriding equals（覆盖 equals
+方法时应遵守的约定）</a></li>
+<li><a
+href="Chapter-3/Chapter-3-Item-11-Always-override-hashCode-when-you-override-equals.html">Item
+11: Always override hashCode when you override equals（当覆盖 equals
+方法时，总要覆盖 hashCode 方法）</a></li>
+<li><a
+href="Chapter-3/Chapter-3-Item-12-Always-override-toString.html">Item 12:
+Always override toString（始终覆盖 toString 方法）</a></li>
+<li><a
+href="Chapter-3/Chapter-3-Item-13-Override-clone-judiciously.html">Item
+13: Override clone judiciously（明智地覆盖 clone 方法）</a></li>
+<li><a
+href="Chapter-3/Chapter-3-Item-14-Consider-implementing-Comparable.html">Item
+14: Consider implementing Comparable（考虑实现 Comparable
+接口）</a></li>
+</ul></li>
+<li><strong>Chapter 4. Classes and Interfaces（类和接口）</strong>
+<ul>
+<li><a href="Chapter-4/Chapter-4-Introduction.html">Chapter 4
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-15-Minimize-the-accessibility-of-classes-and-members.html">Item
+15: Minimize the accessibility of classes and
+members（尽量减少类和成员的可访问性）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-16-In-public-classes-use-accessor-methods-not-public-fields.html">Item
+16: In public classes use accessor methods not public
+fields（在公共类中，使用访问器方法，而不是公共字段）</a></li>
+<li><a href="Chapter-4/Chapter-4-Item-17-Minimize-mutability.html">Item
+17: Minimize mutability（减少可变性）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-18-Favor-composition-over-inheritance.html">Item
+18: Favor composition over
+inheritance（优先选择复合而不是继承）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-19-Design-and-document-for-inheritance-or-else-prohibit-it.html">Item
+19: Design and document for inheritance or else prohibit
+it（继承要设计良好并且具有文档，否则禁止使用）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-20-Prefer-interfaces-to-abstract-classes.html">Item
+20: Prefer interfaces to abstract classes（接口优于抽象类）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-21-Design-interfaces-for-posterity.html">Item
+21: Design interfaces for posterity（为后代设计接口）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-22-Use-interfaces-only-to-define-types.html">Item
+22: Use interfaces only to define types（接口只用于定义类型）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-23-Prefer-class-hierarchies-to-tagged-classes.html">Item
+23: Prefer class hierarchies to tagged
+classes（类层次结构优于带标签的类）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-24-Favor-static-member-classes-over-nonstatic.html">Item
+24: Favor static member classes over
+nonstatic（静态成员类优于非静态成员类）</a></li>
+<li><a
+href="Chapter-4/Chapter-4-Item-25-Limit-source-files-to-a-single-top-level-class.html">Item
+25: Limit source files to a single top level
+class（源文件仅限有单个顶层类）</a></li>
+</ul></li>
+<li><strong>Chapter 5. Generics（泛型）</strong>
+<ul>
+<li><a href="Chapter-5/Chapter-5-Introduction.html">Chapter 5
+Introduction（章节介绍）</a></li>
+<li><a href="Chapter-5/Chapter-5-Item-26-Do-not-use-raw-types.html">Item
+26: Do not use raw types（不要使用原始类型）</a></li>
+<li><a
+href="Chapter-5/Chapter-5-Item-27-Eliminate-unchecked-warnings.html">Item
+27: Eliminate unchecked warnings（消除 unchecked 警告）</a></li>
+<li><a href="Chapter-5/Chapter-5-Item-28-Prefer-lists-to-arrays.html">Item
+28: Prefer lists to arrays（list 优于数组）</a></li>
+<li><a href="Chapter-5/Chapter-5-Item-29-Favor-generic-types.html">Item
+29: Favor generic types（优先使用泛型）</a></li>
+<li><a href="Chapter-5/Chapter-5-Item-30-Favor-generic-methods.html">Item
+30: Favor generic methods（优先使用泛型方法）</a></li>
+<li><a
+href="Chapter-5/Chapter-5-Item-31-Use-bounded-wildcards-to-increase-API-flexibility.html">Item
+31: Use bounded wildcards to increase API
+flexibility（使用有界通配符增加 API 的灵活性）</a></li>
+<li><a
+href="Chapter-5/Chapter-5-Item-32-Combine-generics-and-varargs-judiciously.html">Item
+32: Combine generics and varargs
+judiciously（明智地合用泛型和可变参数）</a></li>
+<li><a
+href="Chapter-5/Chapter-5-Item-33-Consider-typesafe-heterogeneous-containers.html">Item
+33: Consider typesafe heterogeneous
+containers（考虑类型安全的异构容器）</a></li>
+</ul></li>
+<li><strong>Chapter 6. Enums and Annotations（枚举和注解）</strong>
+<ul>
+<li><a href="Chapter-6/Chapter-6-Introduction.html">Chapter 6
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-6/Chapter-6-Item-34-Use-enums-instead-of-int-constants.html">Item
+34: Use enums instead of int constants（用枚举类型代替 int
+常量）</a></li>
+<li><a
+href="Chapter-6/Chapter-6-Item-35-Use-instance-fields-instead-of-ordinals.html">Item
+35: Use instance fields instead of
+ordinals（使用实例字段替代序数）</a></li>
+<li><a
+href="Chapter-6/Chapter-6-Item-36-Use-EnumSet-instead-of-bit-fields.html">Item
+36: Use EnumSet instead of bit fields（用 EnumSet 替代位字段）</a></li>
+<li><a
+href="Chapter-6/Chapter-6-Item-37-Use-EnumMap-instead-of-ordinal-indexing.html">Item
+37: Use EnumMap instead of ordinal indexing（使用 EnumMap
+替换序数索引）</a></li>
+<li><a
+href="Chapter-6/Chapter-6-Item-38-Emulate-extensible-enums-with-interfaces.html">Item
+38: Emulate extensible enums with
+interfaces（使用接口模拟可扩展枚举）</a></li>
+<li><a
+href="Chapter-6/Chapter-6-Item-39-Prefer-annotations-to-naming-patterns.html">Item
+39: Prefer annotations to naming patterns（注解优于命名模式）</a></li>
+<li><a
+href="Chapter-6/Chapter-6-Item-40-Consistently-use-the-Override-annotation.html">Item
+40: Consistently use the Override annotation（坚持使用 <span
+class="citation" data-cites="Override">@Override</span> 注解）</a></li>
+<li><a
+href="Chapter-6/Chapter-6-Item-41-Use-marker-interfaces-to-define-types.html">Item
+41: Use marker interfaces to define
+types（使用标记接口定义类型）</a></li>
+</ul></li>
+<li><strong>Chapter 7. Lambdas and Streams（λ 表达式和流）</strong>
+<ul>
+<li><a href="Chapter-7/Chapter-7-Introduction.html">Chapter 7
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-7/Chapter-7-Item-42-Prefer-lambdas-to-anonymous-classes.html">Item
+42: Prefer lambdas to anonymous classes（λ 表达式优于匿名类）</a></li>
+<li><a
+href="Chapter-7/Chapter-7-Item-43-Prefer-method-references-to-lambdas.html">Item
+43: Prefer method references to lambdas（方法引用优于 λ
+表达式）</a></li>
+<li><a
+href="Chapter-7/Chapter-7-Item-44-Favor-the-use-of-standard-functional-interfaces.html">Item
+44: Favor the use of standard functional
+interfaces（优先使用标准函数式接口）</a></li>
+<li><a
+href="Chapter-7/Chapter-7-Item-45-Use-streams-judiciously.html">Item 45:
+Use streams judiciously（明智地使用流）</a></li>
+<li><a
+href="Chapter-7/Chapter-7-Item-46-Prefer-side-effect-free-functions-in-streams.html">Item
+46: Prefer side effect free functions in
+streams（在流中使用无副作用的函数）</a></li>
+<li><a
+href="Chapter-7/Chapter-7-Item-47-Prefer-Collection-to-Stream-as-a-return-type.html">Item
+47: Prefer Collection to Stream as a return type（优先选择 Collection
+而不是流作为返回类型）</a></li>
+<li><a
+href="Chapter-7/Chapter-7-Item-48-Use-caution-when-making-streams-parallel.html">Item
+48: Use caution when making streams parallel（谨慎使用并行流）</a></li>
+</ul></li>
+<li><strong>Chapter 8. Methods（方法）</strong>
+<ul>
+<li><a href="Chapter-8/Chapter-8-Introduction.html">Chapter 8
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-8/Chapter-8-Item-49-Check-parameters-for-validity.html">Item
+49: Check parameters for validity（检查参数的有效性）</a></li>
+<li><a
+href="Chapter-8/Chapter-8-Item-50-Make-defensive-copies-when-needed.html">Item
+50: Make defensive copies when needed（在需要时制作防御性副本）</a></li>
+<li><a
+href="Chapter-8/Chapter-8-Item-51-Design-method-signatures-carefully.html">Item
+51: Design method signatures carefully（仔细设计方法签名）</a></li>
+<li><a
+href="Chapter-8/Chapter-8-Item-52-Use-overloading-judiciously.html">Item
+52: Use overloading judiciously（明智地使用重载）</a></li>
+<li><a
+href="Chapter-8/Chapter-8-Item-53-Use-varargs-judiciously.html">Item 53:
+Use varargs judiciously（明智地使用可变参数）</a></li>
+<li><a
+href="Chapter-8/Chapter-8-Item-54-Return-empty-collections-or-arrays-not-nulls.html">Item
+54: Return empty collections or arrays, not
+nulls（返回空集合或数组，而不是 null）</a></li>
+<li><a
+href="Chapter-8/Chapter-8-Item-55-Return-optionals-judiciously.html">Item
+55: Return optionals judiciously（明智地的返回 Optional）</a></li>
+<li><a
+href="Chapter-8/Chapter-8-Item-56-Write-doc-comments-for-all-exposed-API-elements.html">Item
+56: Write doc comments for all exposed API elements（为所有公开的 API
+元素编写文档注释）</a></li>
+</ul></li>
+<li><strong>Chapter 9. General Programming（通用程序设计）</strong>
+<ul>
+<li><a href="Chapter-9/Chapter-9-Introduction.html">Chapter 9
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-57-Minimize-the-scope-of-local-variables.html">Item
+57: Minimize the scope of local
+variables（将局部变量的作用域最小化）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-58-Prefer-for-each-loops-to-traditional-for-loops.html">Item
+58: Prefer for-each loops to traditional for loops（for-each
+循环优于传统的 for 循环）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-59-Know-and-use-the-libraries.html">Item
+59: Know and use the libraries（了解并使用库）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-60-Avoid-float-and-double-if-exact-answers-are-required.html">Item
+60: Avoid float and double if exact answers are
+required（若需要精确答案就应避免使用 float 和 double 类型）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-61-Prefer-primitive-types-to-boxed-primitives.html">Item
+61: Prefer primitive types to boxed
+primitives（基本数据类型优于包装类）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-62-Avoid-strings-where-other-types-are-more-appropriate.html">Item
+62: Avoid strings where other types are more
+appropriate（其他类型更合适时应避免使用字符串）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-63-Beware-the-performance-of-string-concatenation.html">Item
+63: Beware the performance of string
+concatenation（当心字符串连接引起的性能问题）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-64-Refer-to-objects-by-their-interfaces.html">Item
+64: Refer to objects by their interfaces（通过接口引用对象）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-65-Prefer-interfaces-to-reflection.html">Item
+65: Prefer interfaces to reflection（接口优于反射）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-66-Use-native-methods-judiciously.html">Item
+66: Use native methods judiciously（明智地使用本地方法）</a></li>
+<li><a href="Chapter-9/Chapter-9-Item-67-Optimize-judiciously.html">Item
+67: Optimize judiciously（明智地进行优化）</a></li>
+<li><a
+href="Chapter-9/Chapter-9-Item-68-Adhere-to-generally-accepted-naming-conventions.html">Item
+68: Adhere to generally accepted naming
+conventions（遵守被广泛认可的命名约定）</a></li>
+</ul></li>
+<li><strong>Chapter 10. Exceptions（异常）</strong>
+<ul>
+<li><a href="Chapter-10/Chapter-10-Introduction.html">Chapter 10
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-10/Chapter-10-Item-69-Use-exceptions-only-for-exceptional-conditions.html">Item
+69: Use exceptions only for exceptional
+conditions（仅在确有异常条件下使用异常）</a></li>
+<li><a
+href="Chapter-10/Chapter-10-Item-70-Use-checked-exceptions-for-recoverable-conditions-and-runtime-exceptions-for-programming-errors.html">Item
+70: Use checked exceptions for recoverable conditions and runtime
+exceptions for programming errors（对可恢复情况使用 checked
+异常，对编程错误使用运行时异常）</a></li>
+<li><a
+href="Chapter-10/Chapter-10-Item-71-Avoid-unnecessary-use-of-checked-exceptions.html">Item
+71: Avoid unnecessary use of checked exceptions（避免不必要地使用
+checked 异常）</a></li>
+<li><a
+href="Chapter-10/Chapter-10-Item-72-Favor-the-use-of-standard-exceptions.html">Item
+72: Favor the use of standard exceptions（鼓励复用标准异常）</a></li>
+<li><a
+href="Chapter-10/Chapter-10-Item-73-Throw-exceptions-appropriate-to-the-abstraction.html">Item
+73: Throw exceptions appropriate to the
+abstraction（抛出能用抽象解释的异常）</a></li>
+<li><a
+href="Chapter-10/Chapter-10-Item-74-Document-all-exceptions-thrown-by-each-method.html">Item
+74: Document all exceptions thrown by each
+method（为每个方法记录会抛出的所有异常）</a></li>
+<li><a
+href="Chapter-10/Chapter-10-Item-75-Include-failure-capture-information-in-detail-messages.html">Item
+75: Include failure capture information in detail
+messages（异常详细消息中应包含捕获失败的信息）</a></li>
+<li><a
+href="Chapter-10/Chapter-10-Item-76-Strive-for-failure-atomicity.html">Item
+76: Strive for failure atomicity（尽力保证故障原子性）</a></li>
+<li><a
+href="Chapter-10/Chapter-10-Item-77-Don’t-ignore-exceptions.html">Item 77:
+Don’t ignore exceptions（不要忽略异常）</a></li>
+</ul></li>
+<li><strong>Chapter 11. Concurrency（并发）</strong>
+<ul>
+<li><a href="Chapter-11/Chapter-11-Introduction.html">Chapter 11
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-11/Chapter-11-Item-78-Synchronize-access-to-shared-mutable-data.html">Item
+78: Synchronize access to shared mutable
+data（对共享可变数据的同步访问）</a></li>
+<li><a
+href="Chapter-11/Chapter-11-Item-79-Avoid-excessive-synchronization.html">Item
+79: Avoid excessive synchronization（避免过度同步）</a></li>
+<li><a
+href="Chapter-11/Chapter-11-Item-80-Prefer-executors,-tasks,-and-streams-to-threads.html">Item
+80: Prefer executors, tasks, and streams to
+threads（Executor、task、流优于直接使用线程）</a></li>
+<li><a
+href="Chapter-11/Chapter-11-Item-81-Prefer-concurrency-utilities-to-wait-and-notify.html">Item
+81: Prefer concurrency utilities to wait and notify（并发实用工具优于
+wait 和 notify）</a></li>
+<li><a
+href="Chapter-11/Chapter-11-Item-82-Document-thread-safety.html">Item 82:
+Document thread safety（文档应包含线程安全属性）</a></li>
+<li><a
+href="Chapter-11/Chapter-11-Item-83-Use-lazy-initialization-judiciously.html">Item
+83: Use lazy initialization judiciously（明智地使用延迟初始化）</a></li>
+<li><a
+href="Chapter-11/Chapter-11-Item-84-Don’t-depend-on-the-thread-scheduler.html">Item
+84: Don’t depend on the thread scheduler（不要依赖线程调度器）</a></li>
+</ul></li>
+<li><strong>Chapter 12. Serialization（序列化）</strong>
+<ul>
+<li><a href="Chapter-12/Chapter-12-Introduction.html">Chapter 12
+Introduction（章节介绍）</a></li>
+<li><a
+href="Chapter-12/Chapter-12-Item-85-Prefer-alternatives-to-Java-serialization.html">Item
+85: Prefer alternatives to Java serialization（优先选择 Java
+序列化的替代方案）</a></li>
+<li><a
+href="Chapter-12/Chapter-12-Item-86-Implement-Serializable-with-great-caution.html">Item
+86: Implement Serializable with great caution（非常谨慎地实现
+Serializable）</a></li>
+<li><a
+href="Chapter-12/Chapter-12-Item-87-Consider-using-a-custom-serialized-form.html">Item
+87: Consider using a custom serialized
+form（考虑使用自定义序列化形式）</a></li>
+<li><a
+href="Chapter-12/Chapter-12-Item-88-Write-readObject-methods-defensively.html">Item
+88: Write readObject methods defensively（防御性地编写 readObject
+方法）</a></li>
+<li><a
+href="Chapter-12/Chapter-12-Item-89-For-instance-control-prefer-enum-types-to-readResolve.html">Item
+89: For instance control, prefer enum types to
+readResolve（对于实例控制，枚举类型优于 readResolve）</a></li>
+<li><a
+href="Chapter-12/Chapter-12-Item-90-Consider-serialization-proxies-instead-of-serialized-instances.html">Item
+90: Consider serialization proxies instead of serialized
+instances（考虑以序列化代理代替序列化实例）</a></li>
+</ul></li>
+</ul>
+</body>
+</html>

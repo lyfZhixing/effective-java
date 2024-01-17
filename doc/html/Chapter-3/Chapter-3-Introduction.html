@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chapter-3-Introduction</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h2 id="chapter-3.-methods-common-to-all-objects对象的通用方法">Chapter
+3. Methods Common to All Objects（对象的通用方法）</h2>
+<h3 id="chapter-3-introduction章节介绍">Chapter 3
+Introduction（章节介绍）</h3>
+<p>ALTHOUGH Object is a concrete class, it is designed primarily for
+extension. All of its nonfinal methods (equals, hashCode, toString,
+clone, and finalize) have explicit general contracts because they are
+designed to be overridden. It is the responsibility of any class
+overriding these methods to obey their general contracts; failure to do
+so will prevent other classes that depend on the contracts (such as
+HashMap and HashSet) from functioning properly in conjunction with the
+class.</p>
+<p>虽然 Object 是一个具体的类，但它主要是为扩展而设计的。它的所有非
+final 方法（equals、hashCode、toString、clone 和
+finalize）都有显式的通用约定，因为它们的设计目的是被覆盖。任何类都有责任覆盖这些方法并将之作为一般约定；如果不这样做，将阻止依赖于约定的其他类（如
+HashMap 和 HashSet）与之一起正常工作。</p>
+<p>This chapter tells you when and how to override the nonfinal Object
+methods. The finalize method is omitted from this chapter because it was
+discussed in Item 8. While not an Object method,Comparable.compareTo is
+discussed in this chapter because it has a similar character.</p>
+<p>本章将告诉你何时以及如何覆盖 Object 类的非 final 方法。finalize
+方法在本章中被省略，因为它在 <a
+href="Chapter-2-Item-8-Avoid-finalizers-and-cleaners.html">Item-8</a>
+中讨论过。虽然 Comparable.compareTo 不是 Object
+类的方法，但是由于具有相似的特性，所以本章也对它进行讨论。</p>
+<h3 id="contents-of-the-chapter章节目录">Contents of the
+chapter（章节目录）</h3>
+<ul>
+<li><a
+href="Chapter-3-Item-10-Obey-the-general-contract-when-overriding-equals.html">Item
+10: Obey the general contract when overriding equals（覆盖 equals
+方法时应遵守的约定）</a></li>
+<li><a
+href="Chapter-3-Item-11-Always-override-hashCode-when-you-override-equals.html">Item
+11: Always override hashCode when you override equals（当覆盖 equals
+方法时，总要覆盖 hashCode 方法）</a></li>
+<li><a
+href="Chapter-3-Item-12-Always-override-toString.html">Item 12:
+Always override toString（始终覆盖 toString 方法）</a></li>
+<li><a
+href="Chapter-3-Item-13-Override-clone-judiciously.html">Item
+13: Override clone judiciously（明智地覆盖 clone 方法）</a></li>
+<li><a
+href="Chapter-3-Item-14-Consider-implementing-Comparable.html">Item
+14: Consider implementing Comparable（考虑实现 Comparable
+接口）</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chapter-5-Introduction</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h2 id="chapter-5.-generics泛型">Chapter 5. Generics（泛型）</h2>
+<h3 id="chapter-5-introduction章节介绍">Chapter 5
+Introduction（章节介绍）</h3>
+<p>SINCE Java 5, generics have been a part of the language. Before
+generics, you had to cast every object you read from a collection. If
+someone accidentally inserted an object of the wrong type, casts could
+fail at runtime. With generics,you tell the compiler what types of
+objects are permitted in each collection. The compiler inserts casts for
+you automatically and tells you at compile time if you try to insert an
+object of the wrong type. This results in programs that are both safer
+and clearer, but these benefits, which are not limited to collections,
+come at a price. This chapter tells you how to maximize the benefits and
+minimize the complications.</p>
+<p>自 Java 5 以来，泛型一直是 Java
+语言的一部分。在泛型出现之前，从集合中读取的每个对象都必须进行强制转换。如果有人不小心插入了错误类型的对象，强制类型转换可能在运行时失败。对于泛型，你可以告知编译器在每个集合中允许哪些类型的对象。编译器会自动为你进行强制转换与插入的操作，如果你试图插入类型错误的对象，编译器会在编译时告诉你。这就产生了更安全、更清晰的程序，但是这些好处不仅仅局限于集合，而且也是有代价的。这一章会告诉你如何最大限度地扬长避短。</p>
+<h3 id="contents-of-the-chapter章节目录">Contents of the
+chapter（章节目录）</h3>
+<ul>
+<li><a href="Chapter-5-Item-26-Do-not-use-raw-types.html">Item
+26: Do not use raw types（不要使用原始类型）</a></li>
+<li><a
+href="Chapter-5-Item-27-Eliminate-unchecked-warnings.html">Item
+27: Eliminate unchecked warnings（消除 unchecked 警告）</a></li>
+<li><a
+href="Chapter-5-Item-28-Prefer-lists-to-arrays.html">Item 28:
+Prefer lists to arrays（list 优于数组）</a></li>
+<li><a href="Chapter-5-Item-29-Favor-generic-types.html">Item
+29: Favor generic types（优先使用泛型）</a></li>
+<li><a href="Chapter-5-Item-30-Favor-generic-methods.html">Item
+30: Favor generic methods（优先使用泛型方法）</a></li>
+<li><a
+href="Chapter-5-Item-31-Use-bounded-wildcards-to-increase-API-flexibility.html">Item
+31: Use bounded wildcards to increase API
+flexibility（使用有界通配符增加 API 的灵活性）</a></li>
+<li><a
+href="Chapter-5-Item-32-Combine-generics-and-varargs-judiciously.html">Item
+32: Combine generics and varargs
+judiciously（明智地合用泛型和可变参数）</a></li>
+<li><a
+href="Chapter-5-Item-33-Consider-typesafe-heterogeneous-containers.html">Item
+33: Consider typesafe heterogeneous
+containers（考虑类型安全的异构容器）</a></li>
+</ul>
+</body>
+</html>

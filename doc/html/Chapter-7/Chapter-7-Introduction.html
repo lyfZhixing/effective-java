@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chapter-7-Introduction</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h2 id="chapter-7.-lambdas-and-streamsλ-表达式和流">Chapter 7. Lambdas
+and Streams（λ 表达式和流）</h2>
+<h3 id="chapter-7-introduction章节介绍">Chapter 7
+Introduction（章节介绍）</h3>
+<p>In Java 8, functional interfaces, lambdas, and method references were
+added to make it easier to create function objects. The streams API was
+added in tandem with these language changes to provide library support
+for processing sequences of data elements. In this chapter, we discuss
+how to make best use of these facilities.</p>
+<p>在 Java 8 中，为了更容易地创建函数对象，添加了函数式接口、lambda
+表达式和方法引用；流 API
+也与这些语言特性一并添加进来，为处理数据元素序列提供库支持。在这一章中，我们将讨论如何最好地利用这些工具。</p>
+<h3 id="contents-of-the-chapter章节目录">Contents of the
+chapter（章节目录）</h3>
+<ul>
+<li><a
+href="Chapter-7-Item-42-Prefer-lambdas-to-anonymous-classes.html">Item
+42: Prefer lambdas to anonymous classes（λ 表达式优于匿名类）</a></li>
+<li><a
+href="Chapter-7-Item-43-Prefer-method-references-to-lambdas.html">Item
+43: Prefer method references to lambdas（方法引用优于 λ
+表达式）</a></li>
+<li><a
+href="Chapter-7-Item-44-Favor-the-use-of-standard-functional-interfaces.html">Item
+44: Favor the use of standard functional
+interfaces（优先使用标准函数式接口）</a></li>
+<li><a
+href="Chapter-7-Item-45-Use-streams-judiciously.html">Item 45:
+Use streams judiciously（明智地使用流）</a></li>
+<li><a
+href="Chapter-7-Item-46-Prefer-side-effect-free-functions-in-streams.html">Item
+46: Prefer side effect free functions in
+streams（在流中使用无副作用的函数）</a></li>
+<li><a
+href="Chapter-7-Item-47-Prefer-Collection-to-Stream-as-a-return-type.html">Item
+47: Prefer Collection to Stream as a return type（优先选择 Collection
+而不是流作为返回类型）</a></li>
+<li><a
+href="Chapter-7-Item-48-Use-caution-when-making-streams-parallel.html">Item
+48: Use caution when making streams parallel（谨慎使用并行流）</a></li>
+</ul>
+</body>
+</html>
