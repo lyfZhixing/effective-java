@@ -16,7 +16,22 @@
 
 如果方法引用更短、更清晰，则使用它们；如果没有，仍然使用 lambda 表达式;
 
-[Item 44: Favor the use of standard functional interfaces（优先使用标准函数式接口）]()   
+[Item 44: Favor the use of standard functional interfaces（优先使用标准函数式接口）](lambdas/AnonymousAndLambda.java)   
+java.util.function 中有 43 个接口。需要记住其中 6 个基本接口，在需要时派生出其他接口：  
+|接口     |签名     |eg     |说明|    
+|-       |-       |-       |   -|    
+|UnaryOperator<T>       |   T apply(T t)	        |   String::toLowerCase     | 返回类型与入参类型相同               |    
+|BinaryOperator<T>      |	T apply(T t1, T t2)     |	BigInteger::add         | 返回类型与入参类型相同，但是有两个入参  |   
+|Predicate<T>           |	boolean test(T t)       |	Collection::isEmpty     | 接受一个参数T，返回boolean类型       |   
+|Function<T,R>          |	R apply(T t)            |	Arrays::asList          | 接受参数T，返回R                   |    
+|Supplier<T>            |	T get()	                |   Instant::now            | 不接受参数，返回T                   |   
+|Consumer<T>            |	void accept(T t)        |	System.out::println     | 接受参数T, 不返回结果                |   
+
+**6个基本接口每个会有3中变体，用于操作基本类型 int、long 和 double**。 它们的名称是通过在基本接口前面加上基本类型前缀而派生出来的。   
+例如：一个接受 int 的 Predicate 就是一个 IntPredicate，一个接受两个 long 值并返回一个 long 的二元操作符就是一个 LongBinaryOperator。除了由返回类型参数化的函数变量外，这些变量类型都不是参数化的。例如，LongFunction<int[]> 使用 long 并返回一个 int[]。   
+
+Function接口还有9个额外变体，以供结果类型为基本数据类型时使用。如果源类型和结果类型都是基本数据类型，则使用带有 **SrcToResult** 的前缀函数，例如 LongToIntFunction（六个变体）。如果源是一个基本数据类型，而结果是一个对象引用，则使用带前缀 <Src>ToObj 的 Function 接口，例如 DoubleToObjFunction（三个变体）。
+
 
 [Item 45: Use streams judiciously（明智地使用流）]()   
 
