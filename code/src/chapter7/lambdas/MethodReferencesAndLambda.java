@@ -1,7 +1,6 @@
 package chapter7.lambdas;
 
 import java.time.Instant;
-import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
