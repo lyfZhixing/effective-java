@@ -30,7 +30,10 @@ java.util.function 中有 43 个接口。需要记住其中 6 个基本接口，
 **6个基本接口每个会有3中变体，用于操作基本类型 int、long 和 double**。 它们的名称是通过在基本接口前面加上基本类型前缀而派生出来的。   
 例如：一个接受 int 的 Predicate 就是一个 IntPredicate，一个接受两个 long 值并返回一个 long 的二元操作符就是一个 LongBinaryOperator。除了由返回类型参数化的函数变量外，这些变量类型都不是参数化的。例如，LongFunction<int[]> 使用 long 并返回一个 int[]。   
 
-Function接口还有9个额外变体，以供结果类型为基本数据类型时使用。如果源类型和结果类型都是基本数据类型，则使用带有 **SrcToResult** 的前缀函数，例如 LongToIntFunction（六个变体）。如果源是一个基本数据类型，而结果是一个对象引用，则使用带前缀 <Src>ToObj 的 Function 接口，例如 DoubleToObjFunction（三个变体）。
+Function接口还有9个额外变体，以供结果类型为基本数据类型时使用。如果源类型和结果类型都是基本数据类型，则使用带有 **SrcToResult** 的前缀函数，例如 LongToIntFunction（六个变体）。如果源是一个基本数据类型，而结果是一个对象引用，则使用带前缀 <Src>ToObj 的 Function 接口，例如 DoubleToObjFunction（三个变体）。  
+
+大多数标准函数式接口的存在只是为了提供对基本类型的支持。不要尝试使用带有包装类的基本函数式接口，而不是使用基本类型函数式接口。在批量操作中使用装箱原语的性能后果可能是致命的。  
+
 
 
 [Item 45: Use streams judiciously（明智地使用流）]()   
