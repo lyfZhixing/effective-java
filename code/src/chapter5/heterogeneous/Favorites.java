@@ -1,6 +1,5 @@
 package chapter5.heterogeneous;
 
-import java.beans.BeanProperty;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -13,7 +12,6 @@ public class Favorites {
 
     private final Map<Class<?>, Object> favorites = new HashMap<>();
 
-    @BeanProperty(expert = true)
     public <T> void putFavorite(Class<T> type, T instance){
         favorites.put(Objects.requireNonNull(type), type.cast(instance));
     }
