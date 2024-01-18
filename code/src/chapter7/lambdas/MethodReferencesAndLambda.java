@@ -6,6 +6,7 @@ import java.util.function.IntFunction;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
+import java.util.function.UnaryOperator;
 
 import static java.time.temporal.ChronoUnit.SECONDS;
 
@@ -33,6 +34,7 @@ public class MethodReferencesAndLambda {
      * 静态方法引用
      */
     static void staticEg() {
+        // 标准函数ToIntFunction<T> 替代Function<String,Integer> ,优先使用基本类型原则： 不要尝试使用带有包装类的基本函数式接口，而不是使用基本类型函数式接口
         ToIntFunction<String> references = Integer::parseInt;           // 方法引用
         ToIntFunction<String> lambda = str -> Integer.parseInt(str);    // λ表达式
 
@@ -55,8 +57,9 @@ public class MethodReferencesAndLambda {
      * 未绑定引用中，在应用函数对象时通过方法声明参数之前的附加参数指定接收对象
      */
     static void unboundEg() {
-        Function<String, String> references = String::toLowerCase;         // 方法引用
-        Function<String, String> lambda = str -> str.toLowerCase();        // λ表达式
+        // 使用标准函数UnaryOperator<T> 替代Function
+        UnaryOperator<String> references = String::toLowerCase;         // 方法引用
+        UnaryOperator<String> lambda = str -> str.toLowerCase();        // λ表达式
 
         System.out.println(references.apply("ABC"));
         System.out.println(lambda.apply("ABC"));
