@@ -36,7 +36,28 @@ Function接口还有9个额外变体，以供结果类型为基本数据类型�
 
 
 
-[Item 45: Use streams judiciously（明智地使用流）]()   
+[Item 45: Use streams judiciously（明智地使用流）]()     
+- 在没有显式类型的情况下，lambda 表达式参数的谨慎命名对于流管道的可读性至关重要  
+- 在流管道中使用 helper 方法比在迭代代码中更重要，因为管道缺少显式类型信息和命名的临时变量  
+- Java 不支持基本字符流
+```
+  "Hello world!".chars().forEach(System.out::print);
+  // 打印 721011081081113211911111410810033
+  // 这是因为 "Hello world!".chars() 返回的流元素不是 char 值，而是 int 值，因此调用了 print 的 int 重载
+```     
+   
+  
+**适合使用流的场景：**  
+- 元素序列的一致变换 
+- 过滤元素序列
+- 使用单个操作组合元素序列（例如添加它们、连接它们或计算它们的最小值）
+- 将元素序列累积到一个集合中，可能是按某个公共属性对它们进行分组
+- 在元素序列中搜索满足某些条件的元素   
+
+
+**使用了中间操作 flatMap**  
+
+
 
 [Item 46: Prefer side effect free functions in streams（在流中使用无副作用的函数）]()   
 
