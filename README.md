@@ -17,12 +17,12 @@
 [Chapter 7. Lambdas and Streams（λ 表达式和流）](code/src/chapter7)
 
 
-[Chapter 8. Methods（方法）]()
+~~[Chapter 8. Methods（方法）]()~~
 
-[Chapter 9. General Programming（通用程序设计）]()
+~~[Chapter 9. General Programming（通用程序设计）]()~~
 
-[Chapter 10. Exceptions（异常）]()
+~~[Chapter 10. Exceptions（异常）]()~~
 
-[Chapter 11. Concurrency（并发）]()
+~~[Chapter 11. Concurrency（并发）]()~~
 
-[Chapter 12. Serialization（序列化）]()
+~~[Chapter 12. Serialization（序列化）]()~~
