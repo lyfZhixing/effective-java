@@ -59,7 +59,10 @@ Function接口还有9个额外变体，以供结果类型为基本数据类型�
 
 
 
-[Item 46: Prefer side effect free functions in streams（在流中使用无副作用的函数）]()   
+[Item 46: Prefer side effect free functions in streams（在流中使用无副作用的函数）]()     
+- forEach 操作应该只用于报告流计算的结果，而不是执行计算
+- 静态导入 Collectors 的所有成员是习惯用法，也是明智的，因为这使流管道更具可读性
+- 
 
 [Item 47: Prefer Collection to Stream as a return type（优先选择 Collection 而不是流作为返回类型）]()   
 
