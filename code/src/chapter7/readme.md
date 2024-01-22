@@ -36,7 +36,7 @@ Function接口还有9个额外变体，以供结果类型为基本数据类型�
 
 
 
-[Item 45: Use streams judiciously（明智地使用流）]()     
+[Item 45: Use streams judiciously（明智地使用流）](lambdas/FlatMapMain.java)     
 - 在没有显式类型的情况下，lambda 表达式参数的谨慎命名对于流管道的可读性至关重要  
 - 在流管道中使用 helper 方法比在迭代代码中更重要，因为管道缺少显式类型信息和命名的临时变量  
 - Java 不支持基本字符流
@@ -55,7 +55,7 @@ Function接口还有9个额外变体，以供结果类型为基本数据类型�
 - 在元素序列中搜索满足某些条件的元素   
 
 
-**使用了中间操作 flatMap**  
+**使用中间操作 flatMap**  
 
 
 
