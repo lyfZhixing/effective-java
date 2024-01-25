@@ -22,7 +22,8 @@
   - 枚举可以添加更多的状态标志，有利于后续新增状态
   - 枚举见名知意，更具可读性
 
-### [Item 52: Use overloading judiciously（明智地使用重载）]()
+### [Item 52: Use overloading judiciously（明智地使用重载）]()   
+**重载方法的选择是静态的，而覆盖法的选择是动态的**  
 
 ### [Item 53: Use varargs judiciously（明智地使用可变参数）]()
 
