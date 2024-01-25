@@ -17,7 +17,7 @@
 [Chapter 7. Lambdas and Streams（λ 表达式和流）](code/src/chapter7)
 
 
-~~[Chapter 8. Methods（方法）]()~~
+[Chapter 8. Methods（方法）](code/src/chapter8)
 
 ~~[Chapter 9. General Programming（通用程序设计）]()~~
 
