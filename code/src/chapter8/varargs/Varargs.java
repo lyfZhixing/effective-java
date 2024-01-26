@@ -28,10 +28,12 @@ public class Varargs {
     }
 
     public static int[] intArray(int a1) {
+        System.out.println("intArray1");
         return new int[]{a1};
     }
 
     public static int[] intArray(int a1, int a2) {
+        System.out.println("intArray2");
         return new int[]{a1, a2};
     }
 
@@ -40,14 +42,12 @@ public class Varargs {
         return new int[]{a1,a2,a3};
     }
 
-    public static int[] intArray(int a1, int a2, int a3, int... rest) {
+    public static int[] intArray(int a1, int... rest) {
         System.out.println("intArray varargs");
-        int[] res = new int[3 + rest.length];
+        int[] res = new int[1 + rest.length];
         res[0] = a1;
-        res[1] = a2;
-        res[2] = a3;
-        for (int i = 3; i < res.length; i++) {
-            res[i] = rest[i-3];
+        for (int i = 1; i < res.length; i++) {
+            res[i] = rest[i-1];
         }
         return res;
     }
