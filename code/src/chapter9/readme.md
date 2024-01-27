@@ -21,7 +21,7 @@
 
 #### Item 60: Avoid float and double if exact answers are required（若需要精确答案就应避免使用 float 和 double 类型）
 
-#### Item 61: Prefer primitive types to boxed primitives（基本数据类型优于包装类）
+#### [Item 61: Prefer primitive types to boxed primitives（基本数据类型优于包装类）](boxing)
 
 #### Item 62: Avoid strings where other types are more appropriate（其他类型更合适时应避免使用字符串）
 
