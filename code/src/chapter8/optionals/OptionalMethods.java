@@ -10,10 +10,6 @@ import java.util.stream.Stream;
  */
 public class OptionalMethods {
 
-    private static final Optional<String> opStr = Optional.of("abcd\n124");
-    private static final Optional<String> opStrBlank = Optional.of("");
-    private static final Optional<String> opEmpty = Optional.empty();
-
     public static void main(String[] args) {
 //        filterM();
         mapM();
@@ -23,12 +19,12 @@ public class OptionalMethods {
     }
 
     static void filterM() {
-        opStrBlank.filter(String::isBlank).orElseThrow(() -> new RuntimeException("字符串为空"));
-        opEmpty.filter(String::isBlank).orElseThrow(() -> new RuntimeException("字符串为空"));
+        opStrBlank().filter(String::isBlank).orElseThrow(() -> new RuntimeException("字符串为空"));
+        opEmpty().filter(String::isBlank).orElseThrow(() -> new RuntimeException("字符串为空"));
     }
 
     static void mapM() {
-        Stream<String> stringStream = opStr.map(String::lines).orElse(Stream.empty());
+        Stream<String> stringStream = opStr().map(String::lines).orElse(Stream.empty()); // 此处ide会提示使用flatMap函数替代，因为入参和出参类型发生了变化
         stringStream.map(it -> it + "\t" + it.length()).forEach(System.out::println);
     }
 
@@ -36,7 +32,7 @@ public class OptionalMethods {
      * flatMap 接受一个 入参为原类型T，出参为另一个类型的 Optional&lt;U&gt;
      */
     static void flatMapM() {
-        Integer i = opStr.flatMap(str -> str.lines().map(String::length).max(Integer::compareTo)).orElse(-1);
+        Integer i = opStr().flatMap(str -> str.lines().map(String::length).max(Integer::compareTo)).orElse(-1);
         System.out.println(i);
     }
 
@@ -45,13 +41,24 @@ public class OptionalMethods {
      * 如果存在则进行消费，不存在则不消费
      */
     static void ifPresentM() {
-        opEmpty.ifPresent(System.out::println);
-        opStrBlank.ifPresent(System.out::println);
-        opStr.ifPresent(System.out::println);
+        opEmpty().ifPresent(System.out::println);
+        opStrBlank().ifPresent(System.out::println);
+        opStr().ifPresent(System.out::println);
     }
 
     static void isPresentM() {
-        System.out.println(opEmpty.isPresent());
-        System.out.println(opStrBlank.isPresent());
+        System.out.println(opEmpty().isPresent());
+        System.out.println(opStrBlank().isPresent());
+    }
+
+    private static Optional<String> opStr() {
+        return Optional.of("abcd\n124");
+    };
+
+    private static Optional<String> opStrBlank() {
+        return Optional.of("");
+    }
+    private static Optional<String> opEmpty() {
+        return Optional.empty();
     }
 }

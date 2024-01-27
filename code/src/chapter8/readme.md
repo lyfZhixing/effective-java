@@ -39,7 +39,18 @@
 永远不要用 null 来代替空数组或集合。它使你的 API 更难以使用，更容易出错，并且没有性能优势。    
 对于非集合类型的空对象则考虑使用Optional返回     
 
-并不是所有的返回类型都能从 Optional 处理中获益。容器类型，包括集合、Map、流、数组和 Optional，不应该封装在 Optional 中。 你应该简单的返回一个空的 List<T>，而不是一个空的 Optional<List<T>>
+并不是所有的返回类型都能从 Optional 处理中获益。容器类型，包括集合、Map、流、数组和 Optional，不应该封装在 Optional 中。 你应该简单的返回一个空的 List<T>，而不是一个空的 Optional<List<T>>      
+
+返回 Optional<T> 并不是没有代价的。Optional 对象必须分配和初始化，从 Optional 对象中读取值需要额外的间接操作。这使得 Optional 不适合在某些性能关键的情况下使用。      
+
+**永远不应该返包装类的 Optional** ， 除了「次基本数据类型」，如 Boolean、Byte、Character、Short 和 Float 之外   
+与返回基本数据类型相比，返回包含包装类的 Optional 类型的代价高得惊人，因为 Optional 类型有两个装箱级别，而不是零。  
+因此，库设计人员认为应该为基本类型 int、long 和 double 提供类似的 Optional<T>。这些可选类型是 OptionalInt、OptionalLong 和 OptionalDouble  
+
+
+**在集合或数组中使用 Optional 作为键、值或元素几乎都是不合适的**    
+
+返回 Optional 会带来实际的性能后果；对于性能关键的方法，最好返回 null 或抛出异常。最后，除了作为返回值之外，你几乎不应该以任何其他方式使用 Optional
 
 ### [Item 55: Return optionals judiciously（明智地的返回 Optional）]()
 
