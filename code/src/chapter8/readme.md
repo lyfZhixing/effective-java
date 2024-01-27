@@ -37,7 +37,9 @@
 
 ### [Item 54: Return empty collections or arrays, not nulls（返回空集合或数组，而不是 null）]()
 永远不要用 null 来代替空数组或集合。它使你的 API 更难以使用，更容易出错，并且没有性能优势。    
-对于非集合类型的空对象则考虑使用Optional返回
+对于非集合类型的空对象则考虑使用Optional返回     
+
+并不是所有的返回类型都能从 Optional 处理中获益。容器类型，包括集合、Map、流、数组和 Optional，不应该封装在 Optional 中。 你应该简单的返回一个空的 List<T>，而不是一个空的 Optional<List<T>>
 
 ### [Item 55: Return optionals judiciously（明智地的返回 Optional）]()
 
