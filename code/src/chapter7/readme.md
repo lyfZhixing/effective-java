@@ -1,8 +1,8 @@
 ## Lambdas and Streams（λ 表达式和流）
 
-[Item 42: Prefer lambdas to anonymous classes（λ 表达式优于匿名类）](lambdas/AnonymousAndLambda.java)   
+#### [Item 42: Prefer lambdas to anonymous classes（λ 表达式优于匿名类）](lambdas/AnonymousAndLambda.java)   
 
-[Item 43: Prefer method references to lambdas（方法引用优于 λ 表达式）](lambdas/AnonymousAndLambda.java)     
+#### [Item 43: Prefer method references to lambdas（方法引用优于 λ 表达式）](lambdas/AnonymousAndLambda.java)     
 方法引用的几种类型：   
 
 |方法引用类型|例子|等效λ表达式|code|
@@ -16,7 +16,7 @@
 
 如果方法引用更短、更清晰，则使用它们；如果没有，仍然使用 lambda 表达式;
 
-[Item 44: Favor the use of standard functional interfaces（优先使用标准函数式接口）](lambdas/AnonymousAndLambda.java)   
+#### [Item 44: Favor the use of standard functional interfaces（优先使用标准函数式接口）](lambdas/AnonymousAndLambda.java)   
 java.util.function 中有 43 个接口。需要记住其中 6 个基本接口，在需要时派生出其他接口：  
 |接口     |签名     |eg     |说明|    
 |-       |-       |-       |   -|    
@@ -36,7 +36,7 @@ Function接口还有9个额外变体，以供结果类型为基本数据类型�
 
 
 
-[Item 45: Use streams judiciously（明智地使用流）](lambdas/FlatMapMain.java)     
+#### [Item 45: Use streams judiciously（明智地使用流）](lambdas/FlatMapMain.java)     
 - 在没有显式类型的情况下，lambda 表达式参数的谨慎命名对于流管道的可读性至关重要  
 - 在流管道中使用 helper 方法比在迭代代码中更重要，因为管道缺少显式类型信息和命名的临时变量  
 - Java 不支持基本字符流
@@ -59,11 +59,11 @@ Function接口还有9个额外变体，以供结果类型为基本数据类型�
 
 
 
-[Item 46: Prefer side effect free functions in streams（在流中使用无副作用的函数）]()     
+#### Item 46: Prefer side effect free functions in streams（在流中使用无副作用的函数）    
 - forEach 操作应该只用于报告流计算的结果，而不是执行计算
 - 静态导入 Collectors 的所有成员是习惯用法，也是明智的，因为这使流管道更具可读性
 - 
 
-[Item 47: Prefer Collection to Stream as a return type（优先选择 Collection 而不是流作为返回类型）]()   
+#### Item 47: Prefer Collection to Stream as a return type（优先选择 Collection 而不是流作为返回类型）   
 
-[Item 48: Use caution when making streams parallel（谨慎使用并行流）]()   
+#### Item 48: Use caution when making streams parallel（谨慎使用并行流）  

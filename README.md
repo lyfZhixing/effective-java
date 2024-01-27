@@ -4,7 +4,7 @@
 或者浏览我根据上边项目制作的html静态文件[doc/html](doc/html)， 可以使用静态文件部署本地电子书或者在线电子书。
 
 ## 章节学习  
-[Chapter 2. Creating and Destroying Objects（创建和销毁对象）](code/src/chapter2)   
+[Chapter 2. Creating and Destroying Objects（创建和销毁对象）](code/src/chapter2)     
 
 [Chapter 3. Methods Common to All Objects（对象的通用方法）](code/src/chapter3)    
 

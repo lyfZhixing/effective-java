@@ -1,23 +1,33 @@
-## 枚举和注解   
-[Item 34: Use enums instead of int constants（用枚举类型代替 int 常量）](strategy)   
+## Chapter 6. Enums and Annotations（枚举和注解）    
+
+JAVA 支持两种特殊用途的引用类型：一种称为枚举类型的类，以及一种称为注解类型的接口。本章将讨论这些类型在实际使用时的最佳方式。  
+
+#### [Item 34: Use enums instead of int constants（用枚举类型代替 int 常量）](strategy)   
+
 - [使用策略枚举替代switch-case ](strategy/PayrollDayStrategy.java) 
 
-[Item 35: Use instance fields instead of ordinals（使用实例字段替代序数）](ordinal)  
+#### [Item 35: Use instance fields instead of ordinals（使用实例字段替代序数）](ordinal)
 
 ordinal 方法是为基于枚举的通用数据结构（如 EnumSet 和 EnumMap）而设计的，除非你使用这个数据结构编写代码，否则最好完全避免使用这个方法。  
 
-[Item 36: Use EnumSet instead of bit fields（用 EnumSet 替代位字段）](collection)  
+#### [Item 36: Use EnumSet instead of bit fields（用 EnumSet 替代位字段）](collection)   
 
-[Item 37: Use EnumMap instead of ordinal indexing（使用 EnumMap 替换序数索引）](collection) 
 
-[Item 38: Emulate extensible enums with interfaces（使用接口模拟可扩展枚举）](interfaces)  
+#### [Item 37: Use EnumMap instead of ordinal indexing（使用 EnumMap 替换序数索引）](collection)   
 
-[Item 39: Prefer annotations to naming patterns（注解优于命名模式）](annotations)    
+
+#### [Item 38: Emulate extensible enums with interfaces（使用接口模拟可扩展枚举）](interfaces)   
+
+
+#### [Item 39: Prefer annotations to naming patterns（注解优于命名模式）](annotations)   
+
 已junit的版本变迁为例，版本3到4，从命名模式到注解   
 
-[Item 40: Consistently use the Override annotation（坚持使用 @Override 注解）]()  
+#### Item 40: Consistently use the Override annotation（坚持使用 @Override 注解）   
 
-[Item 41: Use marker interfaces to define types（使用标记接口定义类型）]()  
+
+#### Item 41: Use marker interfaces to define types（使用标记接口定义类型）  
+
 已经有标记注解了，标记接口还有存在的意义吗？   
 标记接口相比标记注解，有两个有点：  
 - 标记接口定义的类型由标记类的实例实现，标记注解不能； 由于标记接口类型的存在允许你在编译时捕获错误，如果你使用标记注解，则在运行时才能捕获这些错误；
