@@ -36,6 +36,8 @@
 
 
 ### [Item 54: Return empty collections or arrays, not nulls（返回空集合或数组，而不是 null）]()
+永远不要用 null 来代替空数组或集合。它使你的 API 更难以使用，更容易出错，并且没有性能优势。    
+对于非集合类型的空对象则考虑使用Optional返回
 
 ### [Item 55: Return optionals judiciously（明智地的返回 Optional）]()
 
