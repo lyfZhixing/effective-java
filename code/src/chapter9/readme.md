@@ -28,7 +28,8 @@
 - [字符串是聚合类型的糟糕替代品](strings/AggregateType.java) 
 
 
-#### Item 63: Beware the performance of string concatenation（当心字符串连接引起的性能问题）
+#### [Item 63: Beware the performance of string concatenation（当心字符串连接引起的性能问题）](strings/ConcatStrings.java)   
+**不要使用字符串连接操作符合并多个字符串**，除非性能无关紧要。否则使用 StringBuilder 的 append 方法。或者，使用字符数组，再或者一次只处理一个字符串，而不是组合它们
 
 #### Item 64: Refer to objects by their interfaces（通过接口引用对象）
 
