@@ -31,7 +31,11 @@
 #### [Item 63: Beware the performance of string concatenation（当心字符串连接引起的性能问题）](strings/ConcatStrings.java)   
 **不要使用字符串连接操作符合并多个字符串**，除非性能无关紧要。否则使用 StringBuilder 的 append 方法。或者，使用字符数组，再或者一次只处理一个字符串，而不是组合它们
 
-#### Item 64: Refer to objects by their interfaces（通过接口引用对象）
+#### Item 64: Refer to objects by their interfaces（通过接口引用对象）   
+- 如果存在合适的接口类型，那么应该使用接口类型声明参数、返回值、变量和字段
+- 使用接口作为类型, 程序将更加灵活
+- 如果没有合适的接口存在，那么用类引用对象是完全合适的
+  - 如果没有合适的接口，就使用类层次结构中提供所需功能的最底层的类
 
 #### Item 65: Prefer interfaces to reflection（接口优于反射）
 
