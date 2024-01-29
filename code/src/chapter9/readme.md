@@ -23,7 +23,10 @@
 
 #### [Item 61: Prefer primitive types to boxed primitives（基本数据类型优于包装类）](boxing)
 
-#### Item 62: Avoid strings where other types are more appropriate（其他类型更合适时应避免使用字符串）
+#### [Item 62: Avoid strings where other types are more appropriate（其他类型更合适时应避免使用字符串）](strings)   
+- 字符串是枚举类型的糟糕替代品  
+- [字符串是聚合类型的糟糕替代品](strings/AggregateType.java) 
+
 
 #### Item 63: Beware the performance of string concatenation（当心字符串连接引起的性能问题）
 
