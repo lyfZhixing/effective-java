@@ -3,7 +3,7 @@
 本章主要讨论了 Java 语言的具体细节，包括局部变量、控制结构、类库、数据结构和两种不是由语言本身提供的机制：反射和本地方法。最后，讨论了优化和命名惯例。
 
 
-#### [Item 57: Minimize the scope of local variables（将局部变量的作用域最小化）](ScopeOfLocalVar.java)   
+### [Item 57: Minimize the scope of local variables（将局部变量的作用域最小化）](ScopeOfLocalVar.java)   
 
 将局部变量的作用域最小化，最具说服力的方式就是在第一次使用它的地方声明   
 
@@ -15,30 +15,30 @@
 
 
 
-#### Item 58: Prefer for-each loops to traditional for loops（for-each 循环优于传统的 for 循环）
+### Item 58: Prefer for-each loops to traditional for loops（for-each 循环优于传统的 for 循环）
 
-#### Item 59: Know and use the libraries（了解并使用库）
+### Item 59: Know and use the libraries（了解并使用库）
 
-#### Item 60: Avoid float and double if exact answers are required（若需要精确答案就应避免使用 float 和 double 类型）
+### Item 60: Avoid float and double if exact answers are required（若需要精确答案就应避免使用 float 和 double 类型）
 
-#### [Item 61: Prefer primitive types to boxed primitives（基本数据类型优于包装类）](boxing)
+### [Item 61: Prefer primitive types to boxed primitives（基本数据类型优于包装类）](boxing)
 
-#### [Item 62: Avoid strings where other types are more appropriate（其他类型更合适时应避免使用字符串）](strings)   
+### [Item 62: Avoid strings where other types are more appropriate（其他类型更合适时应避免使用字符串）](strings)   
 - 字符串是枚举类型的糟糕替代品  
 - [字符串是聚合类型的糟糕替代品](strings/AggregateType.java) 
 
 
-#### [Item 63: Beware the performance of string concatenation（当心字符串连接引起的性能问题）](strings/ConcatStrings.java)   
+### [Item 63: Beware the performance of string concatenation（当心字符串连接引起的性能问题）](strings/ConcatStrings.java)   
 **不要使用字符串连接操作符合并多个字符串**，除非性能无关紧要。否则使用 StringBuilder 的 append 方法。或者，使用字符数组，再或者一次只处理一个字符串，而不是组合它们
 
-#### Item 64: Refer to objects by their interfaces（通过接口引用对象）  
+### Item 64: Refer to objects by their interfaces（通过接口引用对象）  
 
 - 如果存在合适的接口类型，那么应该使用接口类型声明参数、返回值、变量和字段
 - 使用接口作为类型, 程序将更加灵活
 - 如果没有合适的接口存在，那么用类引用对象是完全合适的
   - 如果没有合适的接口，就使用类层次结构中提供所需功能的最底层的类
 
-#### [Item 65: Prefer interfaces to reflection（接口优于反射）](reflections)        
+### [Item 65: Prefer interfaces to reflection（接口优于反射）](reflections)        
 使用反射的缺点：   
 - 失去了编译时类型检查的所有好处，包括异常检查
 - 执行反射访问所需的代码既笨拙又冗长。写起来很乏味，读起来也很困难
@@ -54,8 +54,8 @@
 
 总之，反射是一种功能强大的工具，对于某些复杂的系统编程任务是必需的，但是它有很多缺点。如果编写的程序必须在编译时处理未知的类，则应该尽可能只使用反射实例化对象，并使用在编译时已知的接口或超类访问对象。
 
-#### Item 66: Use native methods judiciously（明智地使用本地方法）
+### Item 66: Use native methods judiciously（明智地使用本地方法）
 
-#### Item 67: Optimize judiciously（明智地进行优化）
+### Item 67: Optimize judiciously（明智地进行优化）
 
-#### Item 68: Adhere to generally accepted naming conventions（遵守被广泛认可的命名约定）
+### Item 68: Adhere to generally accepted naming conventions（遵守被广泛认可的命名约定）

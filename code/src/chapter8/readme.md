@@ -1,11 +1,11 @@
 ## Chapter 8. Methods（方法） 
 
-#### Item 49: Check parameters for validity（检查参数的有效性）
+### Item 49: Check parameters for validity（检查参数的有效性）
 
 
-#### Item 50: Make defensive copies when needed（在需要时制作防御性副本）
+### Item 50: Make defensive copies when needed（在需要时制作防御性副本）
 
-#### Item 51: Design method signatures carefully（仔细设计方法签名）    
+### Item 51: Design method signatures carefully（仔细设计方法签名）    
 - 仔细选择方法名称
 - 不要提供过于便利的方法。 每种方法都应该各司其职。太多的方法使得类难以学习、使用、记录、测试和维护。  
 - 避免长参数列表。 设定四个或更少的参数。长序列的同类型参数尤其有害。
@@ -22,12 +22,12 @@
   - 枚举可以添加更多的状态标志，有利于后续新增状态
   - 枚举见名知意，更具可读性
 
-#### [Item 52: Use overloading judiciously（明智地使用重载）](overloading)   
+### [Item 52: Use overloading judiciously（明智地使用重载）](overloading)   
 **重载方法的选择是静态的，而覆盖法的选择是动态的** ,覆盖是规范，而重载是例外,**应该避免混淆重载的用法。**   
 方法可以重载，但并不意味着就应该这样做。通常，最好避免重载具有相同数量参数的多个签名的方法  
 安全、保守的策略是永远不导出具有相同数量参数的两个重载， 如果一个方法使用了可变参数，保守策略是根本不重载它。 
 
-#### [Item 53: Use varargs judiciously（明智地使用可变参数）](varargs/Varargs.java)   
+### [Item 53: Use varargs judiciously（明智地使用可变参数）](varargs/Varargs.java)   
 在方法需要参数数量可变的情况下，可变参数是有效的。可变参数是为 printf 和经过改造的核心反射机制（Item-65）而设计的，它们与可变参数同时被添加到 JDK，printf 和 reflection 都从可变参数中受益匪浅.  
 
 使用可变参数会**损失性能**，因为每次调用可变参数都会导致数组分配和初始化   
@@ -35,11 +35,11 @@
   - EnumSet 的静态工厂使用这种技术将创建枚举集的成本降到最低。这是适当的，因为 enum 集合为位字段提供具有性能竞争力的替代方法是至关重要的
 
 
-#### Item 54: Return empty collections or arrays, not nulls（返回空集合或数组，而不是 null）
+### Item 54: Return empty collections or arrays, not nulls（返回空集合或数组，而不是 null）
 永远不要用 null 来代替空数组或集合。它使你的 API 更难以使用，更容易出错，并且没有性能优势。    
 对于非集合类型的空对象则考虑使用Optional返回     
 
-#### [Item 55: Return optionals judiciously（明智地的返回 Optional）](optionals)   
+### [Item 55: Return optionals judiciously（明智地的返回 Optional）](optionals)   
 并不是所有的返回类型都能从 Optional 处理中获益。容器类型，包括集合、Map、流、数组和 Optional，不应该封装在 Optional 中。 你应该简单的返回一个空的 List<T>，而不是一个空的 Optional<List<T>>
 
 返回 Optional<T> 并不是没有代价的。Optional 对象必须分配和初始化，从 Optional 对象中读取值需要额外的间接操作。这使得 Optional 不适合在某些性能关键的情况下使用。
@@ -54,7 +54,7 @@
 返回 Optional 会带来实际的性能后果；对于性能关键的方法，最好返回 null 或抛出异常。最后，除了作为返回值之外，你几乎不应该以任何其他方式使用 Optional
  
 
-#### Item 56: Write doc comments for all exposed API elements（为所有公开的 API 元素编写文档注释）   
+### Item 56: Write doc comments for all exposed API elements（为所有公开的 API 元素编写文档注释）   
 
 - 要正确地编写 API 文档，**必须在每个公开的类、接口、构造函数、方法和字段声明之前加上文档注释**   
 - 方法的文档注释应该简洁地描述方法与其客户端之间的约定
