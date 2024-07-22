@@ -1,6 +1,9 @@
 package extend.aqs;
 
 
+import org.junit.Test;
+
+import java.util.Random;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 public class Main {
@@ -35,6 +38,20 @@ public class Main {
             }, "Thread-" + i).start();
         }
         Thread.sleep(9000L);
+    }
+
+    @Test
+    public void testMyCLHLock() throws InterruptedException {
+        MyCLHLock lock = new MyCLHLock();
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
+            new Thread(() -> {
+                lock.lock();
+                System.out.println("Thread-" + finalI);
+                lock.unlock();
+            }, "Thread-" + i).start();
+        }
+        Thread.sleep(1000L);
     }
 
     public <T extends AbstractQueuedSynchronizer> void 递归示例(T lock, Integer a) {
